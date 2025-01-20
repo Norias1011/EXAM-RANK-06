@@ -54,7 +54,7 @@ int main(int ac, char **av)
     bzero(&serveraddr, sizeof(serveraddr));
 
     serveraddr.sin_family = AF_INET;
-    serveraddr.sin_addr.s_addr = htonl(2130706433);//(INADDR_LOOPBACK);
+    serveraddr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
     serveraddr.sin_port = htons(atoi(av[1]));
 
     if (bind(serverfd, (const struct sockaddr*)&serveraddr, sizeof(serveraddr)) == -1 || listen(serverfd, 100) == -1)
